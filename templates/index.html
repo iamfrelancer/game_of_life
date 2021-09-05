@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% extends 'base.html'%}
+
+    {% block app_content %}
+        <form action="" method="POST" class="form">
+        <p>
+            <label for="row">row___</label>
+            <input type="number" min="2" value="{{ row }}" name="row" id="row">
+        </p>
+        <p>
+            <label for="column">column</label>
+            <input type="number" min="2" value="{{ column }}" name="column" id="column">
+        </p>
+            <input type="submit" value="Сохранить" class="btn btn-primary">
+        </form>
+        <a href="{{ url_for('live') }}" class="btn btn-primary">Создать жизнь</a>
+    {% endblock %}
+</body>
+</html>
